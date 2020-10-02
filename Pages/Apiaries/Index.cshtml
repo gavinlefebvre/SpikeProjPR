@@ -1,0 +1,42 @@
+@page
+@model SpikeProjPR.Pages.Apiaries.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Apiary[0].ApiaryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apiary[0].Beekeeper)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Apiary) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApiaryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beekeeper.BeekeeperId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ApiaryId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ApiaryId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ApiaryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

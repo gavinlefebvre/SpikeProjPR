@@ -1,0 +1,79 @@
+@page
+@model SpikeProjPR.Pages.Hives.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Hive</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.HiveName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.HiveName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.InspectionResults)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.InspectionResults)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.Health)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.Health)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.HoneyStores)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.HoneyStores)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.QueenProduction)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.QueenProduction)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.Equipment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.Equipment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.Inventory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.Inventory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.Losses)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.Losses)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.Gains)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.Gains)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hive.Apiary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hive.Apiary.ApiaryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Hive.HiveId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

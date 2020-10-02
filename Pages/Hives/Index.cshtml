@@ -1,0 +1,90 @@
+@page
+@model SpikeProjPR.Pages.Hives.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].HiveName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].InspectionResults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].Health)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].HoneyStores)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].QueenProduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].Equipment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].Inventory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].Losses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].Gains)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hive[0].Apiary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Hive) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HiveName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InspectionResults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Health)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoneyStores)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueenProduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inventory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Losses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gains)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apiary.ApiaryId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.HiveId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.HiveId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.HiveId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
